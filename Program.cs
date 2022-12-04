@@ -1,4 +1,6 @@
-﻿//Quest_1
+﻿//--------------------------------------------------------------------------------------------------------------------------------   Leason_1
+
+//Quest_1
 
 Console.WriteLine("Enter your first number");
 int numberA=int.Parse(Console.ReadLine());
@@ -83,5 +85,53 @@ for (int i = 1; i <= numberA; i++)
    {
     Console.WriteLine("--> " + i);
    }
+}
+*/
+
+//--------------------------------------------------------------------------------------------------------------------------------   Leason_2
+
+/*Leason_2(Quest_1)
+Console.WriteLine("Enter your number with 3 characters");
+int numberA =int.Parse(Console.ReadLine());
+int SecondNumber=numberA/10%10;
+Console.WriteLine("Your  second number  is: " + SecondNumber);
+*/
+
+
+
+/*Leason_2(Quest_2)
+Console.WriteLine("Enter your number with 3 characters");
+int numberA =int.Parse(Console.ReadLine());
+if (numberA/1000%10>0)
+{
+    int SecondNumber=numberA/10%10;
+Console.WriteLine("Your  second number  is: " + SecondNumber);
+}
+else
+{
+if (numberA/100%10>0)
+{
+int SecondNumber=numberA%10;
+Console.WriteLine("Your  second number  is: " + SecondNumber);
+}
+else
+{
+    Console.WriteLine("Your number  is not normal from 3 characters");
+}
+}
+*/
+
+
+
+/*Leason_2(Quest_3)
+Console.WriteLine("Enter your day number ");
+int numberA =int.Parse(Console.ReadLine());
+if (numberA>=6 & numberA<=7)
+{
+    Console.WriteLine("Its  weekend");
+}
+else
+{
+    Console.WriteLine("Its  not weekend");
 }
 */
