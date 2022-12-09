@@ -1,6 +1,8 @@
-﻿//--------------------------------------------------------------------------------------------------------------------------------   Leason_1
+﻿using System;
 
-//Quest_1
+//--------------------------------------------------------------------------------------------------------------------------------   Leason_1
+
+/*Quest_1
 
 Console.WriteLine("Enter your first number");
 int numberA=int.Parse(Console.ReadLine());
@@ -26,6 +28,7 @@ else
     Console.WriteLine("Max number is : "+ numberB +  " Min number is : " + numberA);
     }
 } 
+*/
 
 
 /*Quest_2
@@ -135,3 +138,83 @@ else
     Console.WriteLine("Its  not weekend");
 }
 */
+
+
+
+
+//--------------------------------------------------------------------------------------------------------------------------------   Leason_3
+
+//Quest_1 
+//Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+
+ /*string Reverse(string text)
+{
+    char[] cArray = text.ToCharArray();
+    string reverse = String.Empty;
+    for (int i = cArray.Length - 1; i > -1; i--)
+    {
+        
+        reverse += cArray[i];
+    }
+    return reverse;
+}
+
+// Function to check if a given number is a palindrome or not
+void isPalindrome(string number)
+{
+	if (Reverse(number)==number)
+    {
+        Console.WriteLine("Palindrome");
+    }
+    else
+    {
+        Console.WriteLine("Not Palindrome");
+    }
+}
+Console.WriteLine("Enter your number");
+string writednumber = Console.ReadLine();
+isPalindrome(writednumber);
+*/
+
+//Quest_2
+//Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
+
+/*double GetDistance(double X1,double Y1,double Z1,double X2,double Y2,double Z2)
+{
+double distance = Math.Sqrt((X2-X1)*(X2-X1)+(Y2-Y1)*(Y2-Y1)+(Z2-Z1)*(Z2-Z1));
+return(distance);
+
+}
+Console.WriteLine("Enter X1");
+double numberA =double.Parse(Console.ReadLine());
+Console.WriteLine("Enter Y1");
+double numberB =double.Parse(Console.ReadLine());
+Console.WriteLine("Enter Z1");
+double numberC =double.Parse(Console.ReadLine());
+Console.WriteLine("Enter X2");
+double numberD =double.Parse(Console.ReadLine());
+Console.WriteLine("Enter Y2");
+double numberE =double.Parse(Console.ReadLine());
+Console.WriteLine("Enter Z2");
+double numberF =double.Parse(Console.ReadLine());
+
+double Result=GetDistance(numberA,numberB,numberC,numberD,numberE,numberF);
+Console.WriteLine("Your distance is:--> " + Result);
+*/
+
+
+//Quest_3
+//Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+
+
+void CalculateCubs(double Count)
+{
+for (int i = 1; i <= Count; i++)
+{
+    double coub =i*i*i;
+    Console.WriteLine(coub);
+}
+}
+Console.WriteLine("Enter Your number");
+double number =double.Parse(Console.ReadLine());
+CalculateCubs(number);
