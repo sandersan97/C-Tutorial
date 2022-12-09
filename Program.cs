@@ -147,7 +147,7 @@ else
 //Quest_1 
 //Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
 
- /*string Reverse(string text)
+ string Reverse(string text)
 {
     char[] cArray = text.ToCharArray();
     string reverse = String.Empty;
@@ -174,12 +174,13 @@ void isPalindrome(string number)
 Console.WriteLine("Enter your number");
 string writednumber = Console.ReadLine();
 isPalindrome(writednumber);
-*/
+
 
 //Quest_2
 //Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
 
-/*double GetDistance(double X1,double Y1,double Z1,double X2,double Y2,double Z2)
+/*
+double GetDistance(double X1,double Y1,double Z1,double X2,double Y2,double Z2)
 {
 double distance = Math.Sqrt((X2-X1)*(X2-X1)+(Y2-Y1)*(Y2-Y1)+(Z2-Z1)*(Z2-Z1));
 return(distance);
@@ -206,7 +207,7 @@ Console.WriteLine("Your distance is:--> " + Result);
 //Quest_3
 //Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
 
-
+/*
 void CalculateCubs(double Count)
 {
 for (int i = 1; i <= Count; i++)
@@ -218,3 +219,4 @@ for (int i = 1; i <= Count; i++)
 Console.WriteLine("Enter Your number");
 double number =double.Parse(Console.ReadLine());
 CalculateCubs(number);
+*/
