@@ -147,6 +147,7 @@ else
 //Quest_1 
 //Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
 
+/*
  string Reverse(string text)
 {
     char[] cArray = text.ToCharArray();
@@ -174,7 +175,7 @@ void isPalindrome(string number)
 Console.WriteLine("Enter your number");
 string writednumber = Console.ReadLine();
 isPalindrome(writednumber);
-
+*/
 
 //Quest_2
 //Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
@@ -219,4 +220,112 @@ for (int i = 1; i <= Count; i++)
 Console.WriteLine("Enter Your number");
 double number =double.Parse(Console.ReadLine());
 CalculateCubs(number);
+*/
+
+
+
+//--------------------------------------------------------------------------------------------------------------------------------   Leason_4
+
+//Quest_1 
+//Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B. Не использовать метод Math.Pow
+
+
+double CustomPow (double BaseNumber, double PowerNumber )
+{
+    double result=0;
+    if (BaseNumber==0)
+    {
+        return(0);
+    }
+    if (PowerNumber<0)
+    {
+        double defactor=1;
+        for (int i = 1; i <=PowerNumber ; i++)
+        {
+            BaseNumber=BaseNumber*BaseNumber;
+            defactor=BaseNumber;
+        }
+        result=BaseNumber/defactor;
+    }
+    if (PowerNumber==0)
+    {
+        return(1);
+    }
+    if (PowerNumber>0)
+    {
+        result=BaseNumber;
+        for (int i = 1; i <=PowerNumber-1 ; i++)
+        {
+            result=result*BaseNumber;
+        }
+    }
+    return(result);
+}
+Console.WriteLine("Enter Your Base number");
+double numberA =double.Parse(Console.ReadLine());
+Console.WriteLine("Enter Your Power number");
+double numberB =double.Parse(Console.ReadLine());
+Console.WriteLine("Result:--> " + CustomPow(numberA,numberB));
+
+
+
+
+
+//Quest_2 
+//Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+
+/*
+int NumbersCountSum(int BaseNumber)
+{
+    int sum=0;
+    if (BaseNumber<=0)
+    {
+        sum=-1;
+    }
+    while (BaseNumber > 0)
+    {
+        sum=sum+BaseNumber%10;
+        BaseNumber=BaseNumber/10;
+
+    }
+return(sum);
+}
+Console.WriteLine("Enter Your Base number");
+int numberA =int.Parse(Console.ReadLine());
+Console.WriteLine("Result:--> " + NumbersCountSum(numberA));
+
+*/
+
+
+
+//Quest_3 
+//Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
+
+/*
+void generateArray(int count)
+	{
+		Random random = new Random();
+		int[] values = new int[count];
+        Console.Write("[ ");
+
+		for (int i = 0; i < count; ++i)
+        {
+			values[i] = random.Next(0,10);
+            if (i==count-1)
+            {
+                Console.Write(values[i] + " ]");
+            }
+            if (i<count-1)
+            {
+                Console.Write(values[i] + ", ");
+            }
+        
+        }
+		return;
+	}
+Console.WriteLine("Enter Your Array Length");
+int numberA =int.Parse(Console.ReadLine());
+Console.Write("Result:--> ");
+generateArray(numberA);
+
 */
