@@ -229,10 +229,10 @@ CalculateCubs(number);
 //Quest_1 
 //Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B. Не использовать метод Math.Pow
 
-
+/*
 double CustomPow (double BaseNumber, double PowerNumber )
 {
-    double result=0;
+    double result=1;
     if (BaseNumber==0)
     {
         return(0);
@@ -240,12 +240,13 @@ double CustomPow (double BaseNumber, double PowerNumber )
     if (PowerNumber<0)
     {
         double defactor=1;
-        for (int i = 1; i <=PowerNumber ; i++)
+        for (int i = 1; i <=PowerNumber*-1 ; i++)
         {
-            BaseNumber=BaseNumber*BaseNumber;
-            defactor=BaseNumber;
+            result=result*BaseNumber;
+            defactor=result;
         }
-        result=BaseNumber/defactor;
+        result=1/defactor;
+        Console.WriteLine("////////////////////////");
     }
     if (PowerNumber==0)
     {
@@ -266,7 +267,7 @@ double numberA =double.Parse(Console.ReadLine());
 Console.WriteLine("Enter Your Power number");
 double numberB =double.Parse(Console.ReadLine());
 Console.WriteLine("Result:--> " + CustomPow(numberA,numberB));
-
+*/
 
 
 
@@ -302,30 +303,40 @@ Console.WriteLine("Result:--> " + NumbersCountSum(numberA));
 //Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
 
 /*
-void generateArray(int count)
+
+int[] GenerateArray(int countA)
 	{
 		Random random = new Random();
-		int[] values = new int[count];
-        Console.Write("[ ");
-
-		for (int i = 0; i < count; ++i)
+		int[] values = new int[countA];
+        
+		for (int i = 0; i < countA; ++i)
         {
 			values[i] = random.Next(0,10);
-            if (i==count-1)
+        
+        }
+		return (values);
+	}
+
+void PrintArray (int countB, int[] array)
+{
+    Console.Write("[ ");
+    for (int i = 0; i < countB; ++i)
+        {
+            if (i==countB-1)
             {
-                Console.Write(values[i] + " ]");
+                Console.Write(array[i] + " ]");
             }
-            if (i<count-1)
+            if (i<countB-1)
             {
-                Console.Write(values[i] + ", ");
+                Console.Write(array[i] + ", ");
             }
         
         }
 		return;
-	}
+}
 Console.WriteLine("Enter Your Array Length");
 int numberA =int.Parse(Console.ReadLine());
 Console.Write("Result:--> ");
-generateArray(numberA);
+PrintArray(numberA,GenerateArray(numberA));
 
 */
