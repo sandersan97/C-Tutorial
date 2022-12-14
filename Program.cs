@@ -229,7 +229,7 @@ CalculateCubs(number);
 //Quest_1 
 //Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B. Не использовать метод Math.Pow
 
-
+/*
 double CustomPow (double BaseNumber, double PowerNumber )
 {
     double result=1;
@@ -267,7 +267,7 @@ Console.WriteLine("Enter Your Power number");
 double numberB =double.Parse(Console.ReadLine());
 Console.WriteLine("Result:--> " + CustomPow(numberA,numberB));
 
-
+*/
 
 
 
@@ -337,5 +337,214 @@ Console.WriteLine("Enter Your Array Length");
 int numberA =int.Parse(Console.ReadLine());
 Console.Write("Result:--> ");
 PrintArray(numberA,GenerateArray(numberA));
+
+*/
+
+
+
+//--------------------------------------------------------------------------------------------------------------------------------   Leason_5
+
+//Quest_1 
+//Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
+
+
+int[] GenerateArray(int countA)
+	{
+		Random random = new Random();
+		int[] values = new int[countA];
+        
+		for (int i = 0; i < countA; ++i)
+        {
+			values[i] = random.Next(100,1000);
+        
+        }
+		return (values);
+	}
+
+int CalculateArray (int[] baseArray)
+{
+    int result=0;
+    for (int i = 0; i < baseArray.Length; i++)
+    {
+        if (baseArray[i]%2==0)
+        {
+            result++;
+        }
+    }
+    return(result);
+}
+void PrintArray(int numbers,int [] array)
+{
+    Console.Write("[ ");
+    for (int i = 0; i < array.Length; ++i)
+        {
+            if (i==array.Length-1)
+            {
+                Console.Write(array[i] + " ]");
+            }
+            if (i<array.Length-1)
+            {
+                Console.Write(array[i] + ", ");
+            }
+        
+        }
+    Console.WriteLine("In your array is: --> " + numbers + " numbers.");
+    
+	return;
+}
+Console.WriteLine("Enter your array length ");
+int numberA = int.Parse(Console.ReadLine());
+int[] generatedArray = GenerateArray(numberA);
+PrintArray(CalculateArray(generatedArray),generatedArray);
+
+
+
+//Quest_2 
+//Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
+
+/*
+int[] GenerateArray(int countA)
+	{
+		Random random = new Random();
+		int[] values = new int[countA];
+        
+		for (int i = 0; i < countA; ++i)
+        {
+			values[i] = random.Next(-1000,1000);
+        
+        }
+		return (values);
+	}
+
+int CalculateArraySum (int[] baseArray)
+{
+    int result=0;
+    for (int i = 0; i < baseArray.Length; i++)
+    {
+        if (i%2>0)
+        {
+            result+=baseArray[i];
+        }
+    }
+    return(result);
+}
+
+void PrintArray(int numbers,int [] array)
+{
+    Console.Write("[ ");
+    for (int i = 0; i < array.Length; ++i)
+        {
+            if (i==array.Length-1)
+            {
+                Console.Write(array[i] + " ]");
+            }
+            if (i<array.Length-1)
+            {
+                Console.Write(array[i] + ", ");
+            }
+        
+        }
+    Console.WriteLine("Sum of numbers is: --> " + numbers );
+    
+	return;
+}
+
+Console.WriteLine("Enter your array length ");
+int numberA = int.Parse(Console.ReadLine());
+int[] generatedArray = GenerateArray(numberA);
+PrintArray(CalculateArraySum(generatedArray),generatedArray);
+*/
+
+
+//Quest_3 
+//Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+
+/*
+
+int[] GenerateArray(int countA)
+{
+    Random random = new Random();
+    int[] values = new int[countA];
+
+    for (int i = 0; i < countA; ++i)
+    {
+        values[i] = random.Next(Int32.MinValue, Int32.MaxValue);
+
+    }
+    return (values);
+}
+
+int FindMaxNumber(int[] array)
+{
+    int result = array[0];
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] > result)
+        {
+            result = array[i];
+        }
+    }
+    return (result);
+}
+
+int FindMinNumber(int[] array)
+{
+    int result = array[0];
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] < result)
+        {
+            result = array[i];
+        }
+    }
+    return (result);
+}
+
+int CalculateNumbers(int firstNumber, int secondNumber)
+{
+    int result = -1;
+    if (firstNumber > secondNumber)
+    {
+        result = firstNumber - secondNumber;
+    }
+    if (firstNumber < secondNumber)
+    {
+        result = secondNumber - firstNumber;
+    }
+    if (firstNumber == secondNumber)
+    {
+        result = 0;
+    }
+    return (result);
+}
+
+Console.WriteLine("Enter your array length ");
+int numberA = int.Parse(Console.ReadLine());
+int[] generatedArray = GenerateArray(numberA);
+
+void PrintArray(int[] array, int diference)
+{
+    Console.Write("[ ");
+    for (int i = 0; i < array.Length; ++i)
+    {
+        if (i == array.Length - 1)
+        {
+            Console.Write(array[i] + " ]");
+        }
+        if (i < array.Length - 1)
+        {
+            Console.Write(array[i] + ", ");
+        }
+
+    }
+    Console.WriteLine("\r");
+    Console.WriteLine("Max number is: --> " + FindMaxNumber(generatedArray));
+    Console.WriteLine("Min number is: --> " + FindMinNumber(generatedArray));
+    Console.WriteLine("Diference between max and min number is: --> " + diference);
+
+    return;
+}
+
+PrintArray(generatedArray, CalculateNumbers(FindMinNumber(generatedArray), FindMaxNumber(generatedArray)));
 
 */
