@@ -229,7 +229,7 @@ CalculateCubs(number);
 //Quest_1 
 //Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B. Не использовать метод Math.Pow
 
-/*
+
 double CustomPow (double BaseNumber, double PowerNumber )
 {
     double result=1;
@@ -246,7 +246,6 @@ double CustomPow (double BaseNumber, double PowerNumber )
             defactor=result;
         }
         result=1/defactor;
-        Console.WriteLine("////////////////////////");
     }
     if (PowerNumber==0)
     {
@@ -267,7 +266,7 @@ double numberA =double.Parse(Console.ReadLine());
 Console.WriteLine("Enter Your Power number");
 double numberB =double.Parse(Console.ReadLine());
 Console.WriteLine("Result:--> " + CustomPow(numberA,numberB));
-*/
+
 
 
 
