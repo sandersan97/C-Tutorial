@@ -347,7 +347,7 @@ PrintArray(numberA,GenerateArray(numberA));
 //Quest_1 
 //Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
 
-
+/*
 int[] GenerateArray(int countA)
 	{
 		Random random = new Random();
@@ -397,7 +397,7 @@ int numberA = int.Parse(Console.ReadLine());
 int[] generatedArray = GenerateArray(numberA);
 PrintArray(CalculateArray(generatedArray),generatedArray);
 
-
+*/
 
 //Quest_2 
 //Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
@@ -548,3 +548,135 @@ void PrintArray(int[] array, int diference)
 PrintArray(generatedArray, CalculateNumbers(FindMinNumber(generatedArray), FindMaxNumber(generatedArray)));
 
 */
+
+
+
+
+
+
+//--------------------------------------------------------------------------------------------------------------------------------   Leason_6
+
+//Quest_1 
+//Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
+
+
+Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------->     //Quest_1  ");   //Можно без этого но написал в случае использования консоля сразу за оба задания
+
+Console.Write("How much numbers you want enter? ");
+int arrLength = int.Parse(Console.ReadLine());
+
+int[] CreateArray(int arrayCount)
+{
+    int[] baseArray = new int[arrLength];
+
+    for (int i = 0; i < arrLength; i++)
+    {
+        Console.Write($"Enter your {i} number: --> ");
+        baseArray[i] = int.Parse(Console.ReadLine());
+    }
+    return (baseArray);
+}
+
+int CalculatePositiveNumbers(int[] calculableArray)
+{
+    int count = 0;
+    for (int i = 0; i < calculableArray.Length; i++)
+    {
+        if (calculableArray[i] > 0)
+        {
+            count++;
+        }
+    }
+    return(count);
+}
+ 
+ Console.WriteLine($"Numbers > 0 count is: --> {CalculatePositiveNumbers(CreateArray(arrLength))}"); // Можно для вывода сделать отдельный метод но у нас уже 2 есть и думаю нет необходимость.
+
+
+
+
+//Quest_2 
+//Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
+
+
+
+double[] CrossPoint(double b1, double k1, double b2, double k2)
+{
+    double[] coordResult = new double[2];
+    double x = (b1 - b2) / (k2 - k1);
+    double y = (k2 * b1 - k1 * b2) / (k2 - k1);
+    if (k1 == k2) 
+    {
+        for (int i = 0; i < coordResult.Length; i++)
+        {
+            coordResult[i]=-1;
+        }
+        return(coordResult);
+    }
+    else
+    {
+        coordResult[0]= x;
+        coordResult[1]= y;
+        return(coordResult);
+    }
+}
+
+bool CrossControll(double[]enteredArray)
+{
+    if (enteredArray[0]==-1 || enteredArray[1]==-1)
+    {
+        return(false);
+    }
+    else
+    {
+        return(true);
+    }
+}
+
+
+
+void PrintCrossArray(double[] array)
+{
+    Console.Write("( ");
+    for (int i = 0; i < array.Length; ++i)
+    {
+        if (i == array.Length - 1)
+        {
+            Console.Write(array[i] + " )");
+        }
+        if (i < array.Length - 1)
+        {
+            Console.Write(array[i] + "; ");
+        }
+
+    }
+    return;
+}
+
+
+
+Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------->     //Quest_2  ");     //Можно без этого но написал в случае использования консоля сразу за оба задания
+
+
+
+Console.WriteLine("Enter your first number:  ");
+int numberA = int.Parse(Console.ReadLine());
+Console.WriteLine("Enter your second number");
+int numberB = int.Parse(Console.ReadLine());
+Console.WriteLine("Enter your third number");
+int numberC = int.Parse(Console.ReadLine());
+Console.WriteLine("Enter your fourth number");
+int numberD = int.Parse(Console.ReadLine());
+
+double[] pointsResult = CrossPoint(numberA,numberB,numberC,numberD);
+if (CrossControll(pointsResult)==true)
+{
+    PrintCrossArray(pointsResult);
+}
+
+else
+{
+    Console.Write("Заданные прямые не пересекаются!");
+}
+
+
