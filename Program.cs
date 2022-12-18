@@ -623,7 +623,7 @@ double[] CrossPoint(double b1, double k1, double b2, double k2)
 
 bool CrossControll(double[]enteredArray)
 {
-    if (enteredArray[0]==-1 || enteredArray[1]==-1)
+    if (enteredArray[0]==-1 && enteredArray[1]==-1)
     {
         return(false);
     }
