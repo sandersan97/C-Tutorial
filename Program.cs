@@ -686,6 +686,17 @@ else
 
 //--------------------------------------------------------------------------------------------------------------------------------   Leason_7
 
+
+static double GetRandomDoubleRange(double lowerBound, double upperBound)
+{
+    var random = new Random();
+    var rDouble = random.NextDouble();
+    var rRangeDouble = rDouble * (upperBound - lowerBound) + lowerBound;
+    return rRangeDouble;
+}
+
+
+
 void SelectHomeworkLastLeson()
 {
     Console.WriteLine("Please Select Quest number: 1 | 2 | 3 ");
@@ -698,12 +709,12 @@ void SelectHomeworkLastLeson()
         case 1:
             Console.WriteLine("\n" + "-------------------------------> Quest_1 ");
             Console.WriteLine("Задайте двумерный массив размером m×n, заполненный случайными вещественными числами." + "\n");
-            PrintMatrix(CreateDoubleArray(enteredRow, enteredColumn));
+            PrintMatrix(CreateDoubleArray(enteredRow, enteredColumn,false));
             break;
         case 2:
             Console.WriteLine("\n" + "-------------------------------> Quest_2 ");
             Console.WriteLine("Напишите программу, которая на вход принимает позиции элемента в двумерном массиве," + "\n" + "и возвращает значение этого элемента или же указание, что такого элемента нет." + "\n");
-            int[,]case2Array=CreateDoubleArray(3, 4);
+            double[,]case2Array=CreateDoubleArray(3, 4,true);
             PrintMatrix(case2Array);
             Console.WriteLine("\n" + "Please enter your first index");
             int firstNumber = int.Parse(Console.ReadLine());
@@ -714,7 +725,7 @@ void SelectHomeworkLastLeson()
         case 3:
             Console.WriteLine("\n" + "-------------------------------> Quest_3 ");
             Console.WriteLine("Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце." + "\n");
-            int[,] case3Array=CreateDoubleArray(enteredRow, enteredColumn);
+            double[,] case3Array=CreateDoubleArray(enteredRow, enteredColumn,true);
             PrintMatrix(case3Array);
             CalculateMediumArray(case3Array);
             break;
@@ -729,20 +740,26 @@ SelectHomeworkLastLeson();
 //Quest_1 
 //Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
 
-int[,] CreateDoubleArray(int row, int column)
+double[,] CreateDoubleArray(int row, int column, bool realNumber)
 {
-    int[,] matrix = new int[row, column];
-    Random rand = new Random();
+    double[,] matrix = new double[row, column];
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            matrix[i, j] = rand.Next(-9,10);
+            if (realNumber==true)
+            {
+                matrix[i, j] = (int)(GetRandomDoubleRange(0,10));
+            }
+            else
+            {
+                matrix[i, j] = GetRandomDoubleRange(-9,9);
+            }
         }
     }
     return (matrix);
 }
-void PrintMatrix(int[,] enteredMatrix)
+void PrintMatrix(double[,] enteredMatrix)
 {
     for (int i = 0; i < enteredMatrix.GetLength(0); i++)
     {
@@ -764,7 +781,7 @@ void PrintMatrix(int[,] enteredMatrix)
 
 //Ther i will use created befor method from Quest_1.
 
-(bool,int) FindElementContent(int[,]doubleArray,int firstIndex, int secondElement)
+(bool,double) FindElementContent(double[,]doubleArray,int firstIndex, int secondElement)
 {
     for (int i = 0; i < doubleArray.GetLength(0); i++)
     {
@@ -790,9 +807,9 @@ void PrintMatrix(int[,] enteredMatrix)
 //Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
 
 
-void CalculateMediumArray(int[,] matArray)
+void CalculateMediumArray(double[,] matArray)
 {
-    float result = 0;
+    double result = 0;
     for (int i = 0; i < matArray.GetLength(1); i++)
     {
         for (int j = 0; j < matArray.GetLength(0); j++)
