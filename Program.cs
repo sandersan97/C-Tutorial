@@ -709,12 +709,13 @@ void SelectHomeworkLastLeson()
         case 1:
             Console.WriteLine("\n" + "-------------------------------> Quest_1 ");
             Console.WriteLine("Задайте двумерный массив размером m×n, заполненный случайными вещественными числами." + "\n");
-            PrintMatrix(CreateDoubleArray(enteredRow, enteredColumn,false));
+            PrintMatrix(CreateDoubleArray(enteredRow, enteredColumn, false));
             break;
         case 2:
+
             Console.WriteLine("\n" + "-------------------------------> Quest_2 ");
             Console.WriteLine("Напишите программу, которая на вход принимает позиции элемента в двумерном массиве," + "\n" + "и возвращает значение этого элемента или же указание, что такого элемента нет." + "\n");
-            double[,]case2Array=CreateDoubleArray(3, 4,true);
+            double[,] case2Array = CreateDoubleArray(3, 4, true);
             PrintMatrix(case2Array);
             Console.WriteLine("\n" + "Please enter your first index");
             int firstNumber = int.Parse(Console.ReadLine());
@@ -725,7 +726,7 @@ void SelectHomeworkLastLeson()
         case 3:
             Console.WriteLine("\n" + "-------------------------------> Quest_3 ");
             Console.WriteLine("Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце." + "\n");
-            double[,] case3Array=CreateDoubleArray(enteredRow, enteredColumn,true);
+            double[,] case3Array = CreateDoubleArray(enteredRow, enteredColumn, true);
             PrintMatrix(case3Array);
             CalculateMediumArray(case3Array);
             break;
@@ -743,13 +744,14 @@ SelectHomeworkLastLeson();
 double[,] CreateDoubleArray(int row, int column, bool realNumber)
 {
     double[,] matrix = new double[row, column];
+     var rand = new Random();
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
             if (realNumber==true)
             {
-                matrix[i, j] = (int)(GetRandomDoubleRange(0,10));
+                matrix[i, j] = rand.Next(0,10);
             }
             else
             {
@@ -779,6 +781,7 @@ void PrintMatrix(double[,] enteredMatrix)
 //Напишите программу, которая на вход принимает позиции элемента в двумерном массиве,
 // и возвращает значение этого элемента или же указание, что такого элемента нет.
 
+
 //Ther i will use created befor method from Quest_1.
 
 (bool,double) FindElementContent(double[,]doubleArray,int firstIndex, int secondElement)
@@ -800,6 +803,43 @@ void PrintMatrix(double[,] enteredMatrix)
     Console.WriteLine();
     return(false,-1);
 }
+
+
+
+
+//Without cycle.
+
+
+(bool, double) FindElementContentWithoutCycle(double[,] doubleArray, int firstIndex, int secondIndex)
+{
+
+    if (doubleArray.GetLength(0) > firstIndex)
+    {
+
+        if (doubleArray.GetLength(1) > secondIndex)
+        {
+            Console.WriteLine("---------------------------------------");
+            Console.WriteLine("Your number in this index is: --> " + doubleArray[firstIndex, secondIndex] + "\n");
+            return (true, doubleArray[firstIndex, secondIndex]);
+        }
+        else
+        {
+            Console.WriteLine("---------------------------------------");
+            Console.WriteLine("Can't find content on this index." + "\n");
+            Console.WriteLine();
+            return (false, -1);
+        }
+    }
+    else
+    {
+        Console.WriteLine("---------------------------------------");
+        Console.WriteLine("Can't find content on this index." + "\n");
+        Console.WriteLine();
+        return (false, -1);
+    }
+}
+
+
 
 
 
