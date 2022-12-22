@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Text;
+
+
 
 //--------------------------------------------------------------------------------------------------------------------------------   Leason_1
 
@@ -559,8 +562,7 @@ PrintArray(generatedArray, CalculateNumbers(FindMinNumber(generatedArray), FindM
 //Quest_1 
 //Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
 
-
-Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------->     //Quest_1  ");   //Можно без этого но написал в случае использования консоля сразу за оба задания
+/*
 
 Console.Write("How much numbers you want enter? ");
 int arrLength = int.Parse(Console.ReadLine());
@@ -655,8 +657,6 @@ void PrintCrossArray(double[] array)
 
 
 
-Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------->     //Quest_2  ");     //Можно без этого но написал в случае использования консоля сразу за оба задания
-
 
 
 Console.WriteLine("Enter your first number:  ");
@@ -679,4 +679,129 @@ else
     Console.Write("Заданные прямые не пересекаются!");
 }
 
+*/
+
+
+
+
+//--------------------------------------------------------------------------------------------------------------------------------   Leason_7
+
+void SelectHomeworkLastLeson()
+{
+    Console.WriteLine("Please Select Quest number: 1 | 2 | 3 ");
+    int QuestNumber = int.Parse(Console.ReadLine());
+
+    int enteredRow = 3;
+    int enteredColumn = 4;
+    switch (QuestNumber)
+    {
+        case 1:
+            Console.WriteLine("\n" + "-------------------------------> Quest_1 ");
+            Console.WriteLine("Задайте двумерный массив размером m×n, заполненный случайными вещественными числами." + "\n");
+            PrintMatrix(CreateDoubleArray(enteredRow, enteredColumn));
+            break;
+        case 2:
+            Console.WriteLine("\n" + "-------------------------------> Quest_2 ");
+            Console.WriteLine("Напишите программу, которая на вход принимает позиции элемента в двумерном массиве," + "\n" + "и возвращает значение этого элемента или же указание, что такого элемента нет." + "\n");
+            int[,]case2Array=CreateDoubleArray(3, 4);
+            PrintMatrix(case2Array);
+            Console.WriteLine("\n" + "Please enter your first index");
+            int firstNumber = int.Parse(Console.ReadLine());
+            Console.WriteLine("Please enter your second index");
+            int secondNumber = int.Parse(Console.ReadLine());
+            FindElementContent(case2Array, firstNumber, secondNumber);
+            break;
+        case 3:
+            Console.WriteLine("\n" + "-------------------------------> Quest_3 ");
+            Console.WriteLine("Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце." + "\n");
+            int[,] case3Array=CreateDoubleArray(enteredRow, enteredColumn);
+            PrintMatrix(case3Array);
+            CalculateMediumArray(case3Array);
+            break;
+        default:
+            Console.WriteLine("\n" + "!!! Sorry i dont have this Quest in my list !!! " + "\n");
+            break;
+    }
+}
+Console.OutputEncoding = Encoding.UTF8;
+SelectHomeworkLastLeson();
+
+//Quest_1 
+//Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
+
+int[,] CreateDoubleArray(int row, int column)
+{
+    int[,] matrix = new int[row, column];
+    Random rand = new Random();
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            matrix[i, j] = rand.Next(-9,10);
+        }
+    }
+    return (matrix);
+}
+void PrintMatrix(int[,] enteredMatrix)
+{
+    for (int i = 0; i < enteredMatrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < enteredMatrix.GetLength(1); j++)
+        {
+            Console.Write(enteredMatrix[i, j] + "|");
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+
+
+
+//Quest_2 
+//Напишите программу, которая на вход принимает позиции элемента в двумерном массиве,
+// и возвращает значение этого элемента или же указание, что такого элемента нет.
+
+//Ther i will use created befor method from Quest_1.
+
+(bool,int) FindElementContent(int[,]doubleArray,int firstIndex, int secondElement)
+{
+    for (int i = 0; i < doubleArray.GetLength(0); i++)
+    {
+        for (int j = 0; j < doubleArray.GetLength(1); j++)
+        {
+            if (i==firstIndex && j==secondElement)
+            {
+                Console.WriteLine("---------------------------------------");
+                Console.WriteLine("Your number in this index is: --> " + doubleArray[i,j] + "\n");
+                return(i==firstIndex && j==secondElement,doubleArray[i,j]);
+            }
+        }
+    }
+    Console.WriteLine("---------------------------------------");
+    Console.WriteLine("Can't find content on this index." + "\n");
+    Console.WriteLine();
+    return(false,-1);
+}
+
+
+
+//Quest_3 
+//Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+
+
+void CalculateMediumArray(int[,] matArray)
+{
+    float result = 0;
+    for (int i = 0; i < matArray.GetLength(1); i++)
+    {
+        for (int j = 0; j < matArray.GetLength(0); j++)
+        {
+            result = result + matArray[j, i];
+        }
+        result = result / matArray.GetLength(0);
+        Console.Write("( " + result + " )" + "\t");
+        result = 0;
+    }
+}
 
