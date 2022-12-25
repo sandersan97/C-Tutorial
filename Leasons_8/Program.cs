@@ -152,6 +152,12 @@ void WriteArray (int[,] array)
 
 // Quest_3
 // Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
+/* Например, даны 2 матрицы:
+   2 4 | 3 4
+   3 2 | 3 3
+   Результирующая матрица будет:
+   18 20
+   15 18*/
 
 /*
 Console.Clear();
@@ -184,12 +190,12 @@ void MultiplyMatrix(int[,] firstMartrix, int[,] secomdMartrix, int[,] resultMatr
   {
     for (int j = 0; j < resultMatrix.GetLength(1); j++)
     {
-      int sum = 0;
+      int mult = 0;
       for (int k = 0; k < firstMartrix.GetLength(1); k++)
       {
-        sum += firstMartrix[i,k] * secomdMartrix[k,j];
+        mult += firstMartrix[i,k] * secomdMartrix[k,j];
       }
-      resultMatrix[i,j] = sum;
+      resultMatrix[i,j] = mult;
     }
   }
 }
@@ -230,18 +236,17 @@ void WriteArray (int[,] array)
 
 // Quest_4
 // Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
+// Массив размером 2 x 2 x 2
 
+// 66(0,0,0) 25(0,1,0)
+// 34(1,0,0) 41(1,1,0)
+// 27(0,0,1) 90(0,1,1)
+// 26(1,0,1) 55(1,1,1)
 
 /*
 Console.Clear();
 Console.WriteLine($"Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.");
-Console.WriteLine($"\nВведите размер массива X x Y x Z:");
-int x = InputNumbers("Введите X: ");
-int y = InputNumbers("Введите Y: ");
-int z = InputNumbers("Введите Z: ");
-Console.WriteLine($"");
-
-int[,,] array3D = new int[x, y, z];
+int[,,] array3D = new int[2, 2,2];
 CreateArray(array3D);
 WriteArray(array3D);
 
@@ -258,14 +263,12 @@ void WriteArray (int[,,] array3D)
   {
     for (int j = 0; j < array3D.GetLength(1); j++)
     {
-      Console.Write($"X({i}) Y({j}) ");
       for (int k = 0; k < array3D.GetLength(2); k++)
       {
-        Console.Write( $"Z({k})={array3D[i,j,k]}; ");
+        Console.Write( $"{array3D[i,j,k]}({i},{j},{k}); ");
       }
       Console.WriteLine();
     }
-    Console.WriteLine();
   }
 }
 
@@ -310,10 +313,10 @@ void CreateArray(int[,,] array3D)
 
 
 // Quest_5: Заполните спирально массив 4 на 4.
-// 1 2 3 4
-// 12 13 14 5
-// 11 16 15 6
-// 10 9 8 7
+// 01 02 03 04
+// 12 13 14 05
+// 11 16 15 06
+// 10 09 08 07
 
 
 /*
@@ -350,7 +353,7 @@ void WriteArray (int[,] array)
     for (int j = 0; j < array.GetLength(1); j++)
     {
       if (array[i,j] / 10 <= 0)
-      Console.Write($" {array[i,j]} ");
+      Console.Write($"0{array[i,j]} ");
 
       else Console.Write($"{array[i,j]} ");
     }
