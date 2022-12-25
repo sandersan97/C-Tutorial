@@ -1,0 +1,15 @@
+C:\Users\corne\Documents\LEARNING FILES\Programirovanie\bin\Debug\net6.0\Programirovanie.exe
+C:\Users\corne\Documents\LEARNING FILES\Programirovanie\bin\Debug\net6.0\Programirovanie.deps.json
+C:\Users\corne\Documents\LEARNING FILES\Programirovanie\bin\Debug\net6.0\Programirovanie.runtimeconfig.json
+C:\Users\corne\Documents\LEARNING FILES\Programirovanie\bin\Debug\net6.0\Programirovanie.dll
+C:\Users\corne\Documents\LEARNING FILES\Programirovanie\bin\Debug\net6.0\Programirovanie.pdb
+C:\Users\corne\Documents\LEARNING FILES\Programirovanie\obj\Debug\net6.0\Programirovanie.csproj.AssemblyReference.cache
+C:\Users\corne\Documents\LEARNING FILES\Programirovanie\obj\Debug\net6.0\Programirovanie.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\corne\Documents\LEARNING FILES\Programirovanie\obj\Debug\net6.0\Programirovanie.AssemblyInfoInputs.cache
+C:\Users\corne\Documents\LEARNING FILES\Programirovanie\obj\Debug\net6.0\Programirovanie.AssemblyInfo.cs
+C:\Users\corne\Documents\LEARNING FILES\Programirovanie\obj\Debug\net6.0\Programirovanie.csproj.CoreCompileInputs.cache
+C:\Users\corne\Documents\LEARNING FILES\Programirovanie\obj\Debug\net6.0\Programirovanie.dll
+C:\Users\corne\Documents\LEARNING FILES\Programirovanie\obj\Debug\net6.0\refint\Programirovanie.dll
+C:\Users\corne\Documents\LEARNING FILES\Programirovanie\obj\Debug\net6.0\Programirovanie.pdb
+C:\Users\corne\Documents\LEARNING FILES\Programirovanie\obj\Debug\net6.0\Programirovanie.genruntimeconfig.cache
+C:\Users\corne\Documents\LEARNING FILES\Programirovanie\obj\Debug\net6.0\ref\Programirovanie.dll
